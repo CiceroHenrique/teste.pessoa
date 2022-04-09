@@ -1,0 +1,70 @@
+display:
+  mach: 3
+  unit:
+    name: "mph"
+    factor: 2.23694
+
+quarkus:
+  profile: hom
+  application:
+    name: teste.pessoa
+  datasource:
+    # db-kind: ${configs.datasource.${quarkus.profile}.db-kind}
+    username: ${configs.datasource.${quarkus.profile}.username}
+    password: ${configs.datasource.${quarkus.profile}.password}
+    jdbc:
+      url: ${configs.datasource.${quarkus.profile}.connectionUrl}
+      driver: oracle.jdbc.driver.OracleDriver
+  hibernate-orm:
+    database:
+      generation: none
+    log:
+      sql: true
+  http:
+    host: 0.0.0.0
+  # log:
+  #   handler:
+  #     gelf:
+  #       enabled: true
+  #       host: tcp:localhost  #52.167.172.96
+  #       port: 12201
+  #       additional-field:
+  #         app_name:
+  #           value: ${quarkus.application.name}
+  #           type: String
+  #         app_port:
+  #           value: ${quarkus.http.port}
+  #           type: String
+
+exec-params:
+  process-time: 30s
+
+kafka:
+  test:
+    pessoas: kafka:pessoas
+    brokers: ${configs.kafka.${quarkus.profile}}
+    params: "&requestRequiredAcks=1"
+
+configs:
+  datasource:
+    prod:
+      db-kind: other
+      username: system
+      password: ora@123
+      connectionUrl: jdbc:oracle:thin:@127.0.0.1:1521/oradocker
+
+    dev:
+      db-kind: other
+      username: system
+      password: ora@123
+      connectionUrl: jdbc:oracle:thin:@127.0.0.1:1521/oradocker
+
+    hom:
+      db-kind: other
+      username: system
+      password: ora@123
+      connectionUrl: jdbc:oracle:thin:@127.0.0.1:1521/oradocker
+  kafka:
+    prod: "?brokers=localhost:29094"
+    hom: "?brokers=localhost:29094"
+    dev: "?brokers=localhost:29094"
