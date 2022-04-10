@@ -16,6 +16,7 @@ quarkus:
       url: ${configs.datasource.${quarkus.profile}.connectionUrl}
       driver: oracle.jdbc.driver.OracleDriver
   hibernate-orm:
+    default_schema: oradocker
     database:
       generation: none
     log:
@@ -65,6 +66,6 @@ configs:
       password: ora
       connectionUrl: jdbc:oracle:thin:@127.0.0.1:1521/oradocker
   kafka:
-    prod: "?brokers=localhost:29094"
-    hom: "?brokers=localhost:29094"
-    dev: "?brokers=localhost:29094"
+    prod: "?brokers=127.0.0.1:29094"
+    hom: "?brokers=127.0.0.1:29094"
+    dev: "?brokers=127.0.0.1:29094"

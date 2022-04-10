@@ -29,3 +29,4 @@
 /Users/henry/SESA/POC-ITG-Pessoas/teste.pessoa/src/main/java/br/com/api/test/infra/crosscutting/integration/route/routes/PessoaRoute.java
 /Users/henry/SESA/POC-ITG-Pessoas/teste.pessoa/src/main/java/br/com/api/test/application/base/dtos/IdentityDto.java
 /Users/henry/SESA/POC-ITG-Pessoas/teste.pessoa/src/main/java/br/com/api/test/infra/data/base/repository/BaseRepository.java
+/Users/henry/SESA/POC-ITG-Pessoas/teste.pessoa/src/main/java/br/com/api/test/infra/crosscutting/integration/beans/PessoaBean.java

@@ -19,16 +19,14 @@ public class PessoaRepository extends BaseRepository<Pessoa, Long> implements IP
       LocalDateTime paramDateHourLatest, LocalDateTime paramDateHourNow) {
 
     var query = new StringBuilder();
-    query
-        .append(" SELECT DISTINCT p ")
-        .append("   FROM Pessoa p ")
-        .append("  WHERE p.dATUAPESS BETWEEN :originDate AND :nowDate");
+    query.append(" SELECT DISTINCT p ").append("   FROM Pessoa p ");
+    // .append(" WHERE p.dATUAPESS BETWEEN :originDate AND :nowDate");
 
     var listProductsIntegration =
         session
             .createQuery(query.toString(), Pessoa.class)
-            .setParameter("originDate", paramDateHourLatest)
-            .setParameter("nowDate", paramDateHourNow)
+            // .setParameter("originDate", paramDateHourLatest)
+            // .setParameter("nowDate", paramDateHourNow)
             .getResultList();
 
     return listProductsIntegration;
