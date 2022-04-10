@@ -49,20 +49,20 @@ configs:
   datasource:
     prod:
       db-kind: other
-      username: system
-      password: ora@123
+      username: oradocker
+      password: ora
       connectionUrl: jdbc:oracle:thin:@127.0.0.1:1521/oradocker
 
     dev:
       db-kind: other
-      username: system
-      password: ora@123
+      username: oradocker
+      password: ora
       connectionUrl: jdbc:oracle:thin:@127.0.0.1:1521/oradocker
 
     hom:
       db-kind: other
-      username: system
-      password: ora@123
+      username: oradocker
+      password: ora
       connectionUrl: jdbc:oracle:thin:@127.0.0.1:1521/oradocker
   kafka:
     prod: "?brokers=localhost:29094"
